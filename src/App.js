@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import HomeAdmin from "./pages/admin/HomeAdmin";
-import HomeManufacturer from "./pages/manufacturer/HomeManufacturer";
-import HomeDistributor from "./pages/distributer/HomeDistributor";
-import HomeStorage from "./pages/storage/HomeStorage";
-import HomeRetailer from "./pages/retailer/HomeRetailer";
-import Login from "./components/Login/Login";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import { AuthContext } from "./contexts/auth-context";
+import React, { useState, useEffect, useContext } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
+import HomeAdmin from './pages/admin/HomeAdmin';
+import HomeManufacturer from './pages/manufacturer/HomeManufacturer';
+import HomeDistributor from './pages/distributer/HomeDistributor';
+import HomeStorage from './pages/storage/HomeStorage';
+import HomeRetailer from './pages/retailer/HomeRetailer';
+import Login from './components/Login/Login';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import { AuthContext } from './contexts/auth-context';
 
 function App() {
   const { isAuth, userRole, login } = useContext(AuthContext);
@@ -28,19 +28,19 @@ function App() {
               </div>
               <div className="z-[1] bg-main-bg absolute top-14 min-h-[90vh] w-full ">
                 <div>
-                  {userRole === "admin@gmail.com" ? <HomeAdmin /> : ""}
-                  {userRole === "manufacturer@gmail.com" ? (
+                  {userRole === 'admin@gmail.com' ? <HomeAdmin /> : ''}
+                  {userRole === 'manufacturer@gmail.com' ? (
                     <HomeManufacturer />
                   ) : (
-                    ""
+                    ''
                   )}
-                  {userRole === "distributor@gmail.com" ? (
+                  {userRole === 'distributor@gmail.com' ? (
                     <HomeDistributor />
                   ) : (
-                    ""
+                    ''
                   )}
-                  {userRole === "storage@gmail.com" ? <HomeStorage /> : ""}
-                  {userRole === "retailer@gmail.com" ? <HomeRetailer /> : ""}
+                  {userRole === 'storage@gmail.com' ? <HomeStorage /> : ''}
+                  {userRole === 'retailer@gmail.com' ? <HomeRetailer /> : ''}
                 </div>
               </div>
             </div>
